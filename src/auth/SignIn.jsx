@@ -24,43 +24,57 @@ const SignIn = () => {
   };
 
   return (
-    <div className="container-fluid vh-100 d-flex p-0">
+    <div className="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
+      
     
-      <div className="col-lg-6 d-none d-lg-flex flex-column justify-content-center p-5 text-white" 
-           style={{ backgroundColor: '#000' }}>
-        <h1 className="fw-bold display-4">SHOP.CO</h1>
-        <h2 className="fw-bold mt-4">WELCOME BACK TO FASHION.</h2>
-        <p className="mt-3 text-secondary">Sign in to unlock your personalized feed, track orders, and discover tailored recommendations built specifically for your style.</p>
-        <div className="mt-5 p-4 rounded-4" style={{ backgroundColor: '#1a1a1a' }}>
-          <p className="mb-2">"SHOP.CO completely transformed my shopping experience. The style recommendations are spot-on, and the quality is absolutely unmatched!"</p>
-          <p className="fw-bold mb-0">- Sarah M.</p>
-          <small className="text-secondary">Verified Customer</small>
+      <div className="bg-white p-5 rounded-4 shadow-sm" style={{ width: '100%', maxWidth: '450px' }}>
+        
+        {/* Title Section */}
+        <div className="text-center mb-4">
+          <h2 className="fw-bold" style={{ color: '#4f46e5' }}>Login</h2>
+          <p className="text-muted small">Enter your details to sign in to your account</p>
         </div>
-      </div>
 
-      {/* Right Side: Form */}
-      <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center bg-white p-4">
-        <div style={{ width: '100%', maxWidth: '400px' }}>
-          <h2 className="fw-bold mb-2">SIGN IN</h2>
-          <p className="text-muted mb-4">Enter your details below to continue your journey.</p>
-          <form onSubmit={handleLogin}>
-            <div className="mb-3">
-              <label className="form-label">Email Address</label>
-              <input type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} required />
-            </div>
-            <div className="mb-3">
-              <div className="d-flex justify-content-between">
-                <label className="form-label">Password</label>
-                <Link to="/forgot-password" style={{ fontSize: '12px', color: '#000' }}>Forgot password?</Link>
-              </div>
-              <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} required />
-            </div>
-            <button type="submit" className="btn btn-dark w-100 mt-3 py-2" disabled={loading}>
-              {loading ? "Signing in..." : "Sign In"}
-            </button>
-            <p className="text-center mt-3 small">Don't have an account? <Link to="/signup" className="fw-bold text-dark">Sign Up</Link></p>
-          </form>
-        </div>
+        <form onSubmit={handleLogin}>
+          {/* Email Input */}
+          <div className="mb-3">
+            <input 
+              type="email" 
+              className="form-control form-control-lg bg-light border-0" 
+              placeholder="Enter your username/email"
+              onChange={(e) => setEmail(e.target.value)} 
+              required 
+            />
+          </div>
+
+          {/* Password Input */}
+          <div className="mb-3">
+            <input 
+              type="password" 
+              className="form-control form-control-lg bg-light border-0" 
+              placeholder="Enter your password"
+              onChange={(e) => setPassword(e.target.value)} 
+              required 
+            />
+          </div>
+
+          {/* Login Button */}
+          <button 
+            type="submit" 
+            className="btn btn-primary btn-lg w-100 mt-2" 
+            style={{ backgroundColor: '#4f46e5', border: 'none' }}
+            disabled={loading}
+          >
+            {loading ? "Signing in..." : "Login"}
+          </button>
+
+          {/* Footer Link */}
+          <div className="text-center mt-3">
+            <p className="small text-muted">
+              Don't have an account? <Link to="/signup" className="text-decoration-none fw-bold" style={{ color: '#4f46e5' }}>Signup Now</Link>
+            </p>
+          </div>
+        </form>
       </div>
     </div>
   );
