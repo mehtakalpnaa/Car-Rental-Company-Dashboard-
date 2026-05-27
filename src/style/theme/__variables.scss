@@ -1,6 +1,4 @@
-// ==========================================
-// CAR RENTAL DASHBOARD - VARIABLES
-// ==========================================
+
 
 // COLORS
 $primary: #3B82F6;
@@ -121,12 +119,11 @@ $primary: #3B82F6;
 
 @media (max-width: 767px) {
 
-  /* layout ko vertical stack bana */
   .d-flex.flex-column.flex-md-row {
     flex-direction: column !important;
   }
 
-  /* desktop sidebar hide */
+  
   .d-none.d-md-block {
     display: none !important;
   }
@@ -137,7 +134,7 @@ $primary: #3B82F6;
     border-right: none !important;
   }
 
-  /* main full width */
+
   main {
     width: 100% !important;
   }

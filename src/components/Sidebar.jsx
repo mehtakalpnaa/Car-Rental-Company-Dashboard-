@@ -85,68 +85,69 @@ const Sidebar = ({ toggleSidebar }) => {
     //   </button>
     // </div>
     <div
-  className="sidebar p-3 d-flex flex-column h-100"
-  style={{ backgroundColor: "var(--bg-sidebar)" }}
->
-  <div className="d-flex justify-content-between align-items-center mb-3">
-    <div className="d-flex align-items-center">
-      <img
-        src={logo}
-        alt="Logo"
-        style={{ width: "35px", marginRight: "10px" }}
-      />
-      <h4 className="text-white fw-bold mb-0">CAR RENT</h4>
-    </div>
-
-    <button
-      className="btn btn-sm btn-light d-md-none bg-white"
-      onClick={() => toggleSidebar && toggleSidebar()}
+      className="sidebar p-3 d-flex flex-column h-100"
+      style={{ backgroundColor: "var(--bg-sidebar)" }}
     >
-      ✕
-    </button>
-  </div>
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <div className="d-flex align-items-center">
+          <img
+            src={logo}
+            alt="Logo"
+            style={{ width: "35px", marginRight: "10px" }}
+          />
+          <h4 className="text-white fw-bold mb-0">CAR RENT</h4>
+        </div>
 
-  {/* MENU */}
-  <ul className="nav nav-pills flex-column mb-auto">
-    {menuItems.map((item) => (
-      <li className="nav-item mb-1" key={item.name}>
-        <NavLink
-          to={item.path}
-          className={({ isActive }) =>
-            `nav-link text-white ${isActive ? "bg-primary" : ""}`
-          }
+        <button
+          className="btn btn-sm btn-light d-md-none bg-white"
+          onClick={() => toggleSidebar && toggleSidebar()}
         >
-          <i className={`bi ${item.icon} me-2`}></i> {item.name}
-        </NavLink>
-      </li>
-    ))}
+          ✕
+        </button>
+      </div>
 
-    <hr className="text-secondary my-3" />
+      {/* MENU */}
+      <ul className="nav nav-pills flex-column mb-auto">
+        {menuItems.map((item) => (
+          <li className="nav-item mb-1" key={item.name}>
+            <NavLink
+              to={item.path}
+              className={({ isActive }) =>
+                `nav-link text-white ${isActive ? "bg-primary" : ""}`
+              }
+            >
+              <i className={`bi ${item.icon} me-2`}></i> {item.name}
+            </NavLink>
+          </li>
+        ))}
 
-    <p className="text-uppercase small text-secondary px-2 fw-bold">
-      Report
-    </p>
+        <hr className="text-secondary my-3" />
 
-    {reportItems.map((item) => (
-      <li className="nav-item mb-1" key={item.name}>
-        <NavLink
-          to={item.path}
-          className={({ isActive }) =>
-            `nav-link text-white ${isActive ? "bg-primary" : ""}`
-          }
-          onClick={toggleSidebar}
-        >
-          <i className={`bi ${item.icon} me-2`}></i> {item.name}
-        </NavLink>
-      </li>
-    ))}
-  </ul>
+        <p className="text-uppercase small text-secondary px-2 fw-bold">
+          Report
+        </p>
 
-  {/* LOGOUT */}
-  <button className="btn btn-danger w-100 mt-auto" onClick={handleLogout}>
-    <i className="bi bi-box-arrow-right me-2"></i> Logout
-  </button>
-</div>
+        {reportItems.map((item) => (
+          <li className="nav-item mb-1" key={item.name}>
+            <NavLink
+              to={item.path}
+              className={({ isActive }) =>
+                `nav-link text-white ${isActive ? "bg-primary" : ""}`
+              }
+              onClick={toggleSidebar}
+            >
+              <i className={`bi ${item.icon} me-2`}></i> {item.name}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+
+      {/* LOGOUT */}
+// mt-auto hata dein aur jitna upar chahiye utna mt-3, mt-4 ya mt-5 add karein
+      <button className="btn btn-danger w-100 mt-5" onClick={handleLogout}>
+        <i className="bi bi-box-arrow-right me-2"></i> Logout
+      </button>
+    </div>
   );
 };
 
