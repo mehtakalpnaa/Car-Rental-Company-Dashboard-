@@ -143,7 +143,7 @@ const Sidebar = ({ toggleSidebar }) => {
       </ul>
 
       {/* LOGOUT */}
-// mt-auto hata dein aur jitna upar chahiye utna mt-3, mt-4 ya mt-5 add karein
+
       <button className="btn btn-danger w-100 mt-5" onClick={handleLogout}>
         <i className="bi bi-box-arrow-right me-2"></i> Logout
       </button>
