@@ -1,0 +1,42 @@
+@import '../style/theme/_variables';
+
+@each $name, $size in $font-sizes {
+  .fs-#{$name} {
+    font-size: $size !important;
+  }
+}
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: $bg-main;
+  color: $text-dark;
+ 
+}
+
+:root {
+  --bg-sidebar: #111827; 
+
+
+
+   
+  --primary: #3B82F6; 
+}
+
+.bg-sidebar {
+  background-color: var(--bg-sidebar);
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.text-grey-custom { color: #656575 !important; }
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #F9FAFB; 
+  color: #111827;
+}
